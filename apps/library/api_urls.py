@@ -15,6 +15,9 @@ from apps.library.api.book.BookDestroy.views import BookDestroyView
 from apps.library.api.book.BookDetail.views import BookRetrieveView
 from apps.library.api.book.BookUpdate.views import BookUpdateView
 
+from apps.library.api.review.ReviewLC.views import ReviewLCView
+from apps.library.api.review.ReviewRUD.views import ReviewRUDView
+
 
 app_name = "library"
 
@@ -34,4 +37,7 @@ urlpatterns = [
     path('bookdelete/<slug:slug>/', BookDestroyView.as_view(), name="book_destroy"),
     path('bookdetail/<slug:slug>/', BookRetrieveView.as_view(), name="book_detail"),
     path('bookupdate/<slug:slug>/', BookUpdateView.as_view(), name="book_update"),
+
+    path("reviewlc/", ReviewLCView.as_view(), name="review_lc"),
+    path("reviewrud/<int:pk>/", ReviewRUDView.as_view(), name="review_rud"),
 ]
