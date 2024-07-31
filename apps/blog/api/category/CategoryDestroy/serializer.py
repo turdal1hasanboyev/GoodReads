@@ -12,7 +12,4 @@ class CategoryDestroySerializer(ModelSerializer):
             "slug",
         )
         
-        extra_kwargs = {
-            "id": {"read_only": True},
-        }
         

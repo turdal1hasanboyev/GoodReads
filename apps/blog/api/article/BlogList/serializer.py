@@ -23,8 +23,4 @@ class ArticleListSerializer(ModelSerializer):
             "tags",
             "author",
         )
-        
-        extra_kwargs = {
-            "id": {"read_only": True},
-        }
-        
+     

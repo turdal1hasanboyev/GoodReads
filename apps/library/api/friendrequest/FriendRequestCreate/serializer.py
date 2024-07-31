@@ -16,6 +16,7 @@ class FriendRequestCreateSerializer(ModelSerializer):
         extra_kwargs = {
             "id": {"read_only": True},
             "from_user": {"read_only": True},
+            "created_at": {"read_only": True}
         }
 
     def validate(self, attrs):

@@ -15,10 +15,6 @@ class FriendRequestSerializer(ModelSerializer):
             "to_user"
         )
 
-        extra_kwargs = {
-            'id': {'read_only': True}
-        }
-
 
 class MyFriendsSerializer(ModelSerializer):
     to_users = SerializerMethodField()
@@ -37,10 +33,6 @@ class MyFriendsSerializer(ModelSerializer):
             "email",
             "to_users",
         )
-
-        extra_kwargs = {
-            'id': {'read_only': True}
-        }
 
     def to_representation(self, instance):
         data = super().to_representation(instance)

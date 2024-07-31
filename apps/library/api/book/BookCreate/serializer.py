@@ -24,6 +24,5 @@ class BookCreateSerializer(ModelSerializer):
         
         extra_kwargs = {
             "id": {"read_only": True},
-            "author": {"read_only": True},
         }
         
