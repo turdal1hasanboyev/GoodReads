@@ -11,7 +11,6 @@ class ArticleListSerializer(ModelSerializer):
     category = CategoryListSerializer(read_only=True)
     tags = TagLCSerializer(read_only=True, many=True)
 
-
     class Meta:
         model = Article
         fields = (

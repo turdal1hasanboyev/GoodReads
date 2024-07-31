@@ -5,8 +5,7 @@ from apps.user.api.CustomUser.serializer import CustomUserSerializer
 
 
 class BookCreateSerializer(ModelSerializer):
-    author = CustomUserSerializer
-
+    author = CustomUserSerializer(read_only=True)
 
     class Meta:
         model = Book
@@ -14,10 +13,10 @@ class BookCreateSerializer(ModelSerializer):
             'id',
             "name",
             "slug",
-            "author",
             "description",
             'published_at',
             "genres",
+            'author',
             "pages",
             "award",
             "cover",
@@ -25,5 +24,6 @@ class BookCreateSerializer(ModelSerializer):
         
         extra_kwargs = {
             "id": {"read_only": True},
+            "author": {"read_only": True},
         }
         

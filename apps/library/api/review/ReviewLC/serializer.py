@@ -9,7 +9,6 @@ class ReviewLCSerializer(ModelSerializer):
     author = CustomUserSerializer
     book = BookListSerializer
 
-
     class Meta:
         model = Review
         fields = (

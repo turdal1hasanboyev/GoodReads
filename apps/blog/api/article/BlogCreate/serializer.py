@@ -2,12 +2,15 @@ from rest_framework.serializers import ModelSerializer
 
 from apps.blog.models import Article
 from apps.user.api.CustomUser.serializer import CustomUserSerializer
+from apps.blog.api.category.CategoryList.serializer import CategoryListSerializer
+from apps.blog.api.tag.TagLC.serializer import TagLCSerializer
 
 
 class ArticleCreateSerializer(ModelSerializer):
     author = CustomUserSerializer
+    category = CategoryListSerializer
+    tags = TagLCSerializer
 
-    
     class Meta:
         model = Article
         fields = (

@@ -1,5 +1,7 @@
 from django.db import models
 
+import uuid
+
 from django.core.validators import MinValueValidator, MaxValueValidator
 from django.template.defaultfilters import slugify
 from ckeditor.fields import RichTextField
@@ -46,7 +48,7 @@ class Book(BaseModel):
     
     def save(self, *args, **kwargs):  
         if not self.slug:
-            self.slug = slugify(self.name)
+            self.slug = f"{slugify(self.name)}-{uuid.uuid4()}"
 
         return super().save(*args, **kwargs)
     
@@ -81,4 +83,21 @@ class MyBook(BaseModel):
 
     def __str__(self) -> str:
         return f"{self.user.get_full_name()} - {self.book}"
+    
+
+class FriendRequest(BaseModel):
+    from_user = models.ForeignKey(
+        "user.User",
+        related_name='from_users',
+        on_delete=models.CASCADE
+    )
+
+    to_user = models.ForeignKey(
+        "user.User",
+        related_name='to_users',
+        on_delete=models.CASCADE
+    )
+
+    def __str__(self):
+        return f"{self.from_user} to {self.to_user}"
     

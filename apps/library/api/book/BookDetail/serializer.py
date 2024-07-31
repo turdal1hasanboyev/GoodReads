@@ -7,7 +7,6 @@ from apps.user.api.CustomUser.serializer import CustomUserSerializer
 class BookRetrieveSerializer(ModelSerializer):
     author = CustomUserSerializer(read_only=True)
 
-    
     class Meta:
         model = Book
         fields = (

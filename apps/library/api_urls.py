@@ -18,9 +18,12 @@ from apps.library.api.book.BookUpdate.views import BookUpdateView
 from apps.library.api.review.ReviewLC.views import ReviewLCView
 from apps.library.api.review.ReviewRUD.views import ReviewRUDView
 
+from apps.library.api.friendrequest.FriendRequestCreate.views import FriendRequestCreateView
+from apps.library.api.friendrequest.FriendRequestDestroy.views import FriendRequestDestroyView
+from apps.library.api.friendrequest.FriendRequestRetrieve.views import MyFriendsView
+
 
 app_name = "library"
-
 
 urlpatterns = [
     path('genrelc/', GenreLCView.as_view(), name='genre_lc'),
@@ -40,4 +43,8 @@ urlpatterns = [
 
     path("reviewlc/", ReviewLCView.as_view(), name="review_lc"),
     path("reviewrud/<int:pk>/", ReviewRUDView.as_view(), name="review_rud"),
+
+    path("friendrequestcreate/", FriendRequestCreateView.as_view(), name="friend_request_create"),
+    path("myfriends/", MyFriendsView.as_view(), name="my_friends"),
+    path("unfollowfriend/<int:pk>/", FriendRequestDestroyView.as_view(), name="unfollow_friend")
 ]

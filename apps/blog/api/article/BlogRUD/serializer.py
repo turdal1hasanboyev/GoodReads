@@ -8,9 +8,8 @@ from apps.blog.api.tag.TagLC.serializer import TagLCSerializer
 
 class ArticleRUDSerializer(ModelSerializer):
     author = CustomUserSerializer(read_only=True)
-    category = CategoryListSerializer(read_only=True)
-    tags = TagLCSerializer(read_only=True, many=True)
-
+    category = CategoryListSerializer
+    tags = TagLCSerializer(many=True)
 
     class Meta:
         model = Article

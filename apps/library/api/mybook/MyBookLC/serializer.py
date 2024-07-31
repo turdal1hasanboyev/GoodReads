@@ -9,7 +9,6 @@ class MyBookLCSerializer(ModelSerializer):
     user = CustomUserSerializer
     book = BookListSerializer
 
-
     class Meta:
         model = MyBook
         fields = (

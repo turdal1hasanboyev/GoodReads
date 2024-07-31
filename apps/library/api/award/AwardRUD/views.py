@@ -7,6 +7,7 @@ from apps.library.api.award.AwardRUD.serializer import AwardRUDSerializer
 class AwardRUDView(RetrieveUpdateDestroyAPIView):
     queryset = Award.objects.all()
     serializer_class = AwardRUDSerializer
+    lookup_field = 'pk'
     
     def perform_destroy(self, instance):
         instance.is_active = False

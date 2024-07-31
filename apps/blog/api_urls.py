@@ -19,7 +19,6 @@ from apps.blog.api.review.ReviewRUD.views import ReviewRUDView
 
 app_name = "blog"
 
-
 urlpatterns = [
     path('articlecreate/', ArticleCreateView.as_view(), name="article_create"),
     path('articlelist/', ArticleListView.as_view(), name="article_list"),
