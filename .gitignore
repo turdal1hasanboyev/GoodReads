@@ -165,4 +165,3 @@ cython_debug/
 static/
 staticfiles/
 media/
-.env.example/
