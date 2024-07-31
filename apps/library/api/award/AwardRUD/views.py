@@ -11,6 +11,7 @@ class AwardRUDView(RetrieveUpdateDestroyAPIView):
     
     def perform_destroy(self, instance):
         instance.is_active = False
+        
         instance.save()
 
     def get_queryset(self):

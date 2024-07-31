@@ -26,7 +26,3 @@ class BookListSerializer(ModelSerializer):
             "cover",
         )
         
-        extra_kwargs = {
-            "id": {"read_only": True},
-        }
-        

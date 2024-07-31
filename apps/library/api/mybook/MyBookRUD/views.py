@@ -8,9 +8,11 @@ class MyBookRUDView(RetrieveUpdateDestroyAPIView):
     queryset = MyBook.objects.all()
     serializer_class = MyBookRUDSerializer
     pagination_class = None
+    lookup_field = "pk"
     
     def perform_destroy(self, instance):
         instance.is_active = False
+        
         instance.save()
 
     def get_queryset(self):

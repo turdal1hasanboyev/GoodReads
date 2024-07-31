@@ -7,9 +7,11 @@ from apps.library.api.genre.GenreRUD.serializer import GenreRUDSerializer
 class GenreRUDView(RetrieveUpdateDestroyAPIView):
     queryset = Genre.objects.all()
     serializer_class = GenreRUDSerializer
+    lookup_field = 'pk'
     
     def perform_destroy(self, instance):
         instance.is_active = False
+
         instance.save()
 
     def get_queryset(self):

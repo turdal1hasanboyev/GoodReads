@@ -13,6 +13,7 @@ class FriendRequestDestroyView(DestroyAPIView):
 
     def perform_destroy(self, instance):
         print(instance.from_user, self.request.user)
+        
         if self.request.user.id == instance.from_user.id:
             instance.delete()
         else:

@@ -7,9 +7,11 @@ from apps.blog.api.review.ReviewRUD.serializer import BlogReviewRUDSerializer
 class ReviewRUDView(RetrieveUpdateDestroyAPIView):
     queryset = Review.objects.all()
     serializer_class = BlogReviewRUDSerializer
+    lookup_field = 'pk'
     
     def perform_destroy(self, instance):
         instance.is_active = False
+        
         instance.save()
 
     def get_queryset(self):

@@ -1,13 +1,9 @@
 from rest_framework.serializers import ModelSerializer, ValidationError
 
 from apps.library.models import FriendRequest
-from apps.user.api.CustomUser.serializer import CustomUserSerializer
 
 
 class FriendRequestCreateSerializer(ModelSerializer):
-    from_user = CustomUserSerializer
-    to_user = CustomUserSerializer
-
     class Meta:
         model = FriendRequest
         fields = (
@@ -19,6 +15,7 @@ class FriendRequestCreateSerializer(ModelSerializer):
 
         extra_kwargs = {
             "id": {"read_only": True},
+            "from_user": {"read_only": True},
         }
 
     def validate(self, attrs):
