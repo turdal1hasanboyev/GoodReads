@@ -19,6 +19,7 @@ class EmailVerifyGenericView(GenericAPIView):
         if verify:
             user = User.objects.filter(email=email).first()
             user.is_verified = True
+            
             user.save()
             
             return Response({

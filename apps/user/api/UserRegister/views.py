@@ -34,10 +34,12 @@ class UserRegisterCreateView(GenericAPIView):
                 }
 
                 Util.send_email(data=data)
+
                 VerifyEmail.objects.create(email=email, code=code)
 
                 serializer = self.serializer_class(data=request.data)
                 serializer.is_valid(raise_exception=True)
+                
                 serializer.save()
 
                 return Response({'success': True, 'message': 'Please verify Email'},
