@@ -91,7 +91,6 @@ class FriendRequest(BaseModel):
         related_name='from_users',
         on_delete=models.CASCADE
     )
-
     to_user = models.ForeignKey(
         "user.User",
         related_name='to_users',
