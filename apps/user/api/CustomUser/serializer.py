@@ -14,7 +14,3 @@ class CustomUserSerializer(ModelSerializer):
             'phone_number',
         ]
         
-        extra_kwargs = {
-            "id": {"read_only": True},
-        }
-        

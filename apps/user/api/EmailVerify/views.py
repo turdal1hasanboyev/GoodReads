@@ -1,6 +1,5 @@
 from rest_framework import status
 from rest_framework.response import Response
-
 from rest_framework.generics import GenericAPIView
 
 from apps.user.models import VerifyEmail, User
@@ -18,6 +17,7 @@ class EmailVerifyGenericView(GenericAPIView):
         
         if verify:
             user = User.objects.filter(email=email).first()
+            
             user.is_verified = True
             
             user.save()

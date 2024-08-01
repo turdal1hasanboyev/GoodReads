@@ -1,7 +1,7 @@
-from datetime import datetime
-
-from django.shortcuts import reverse
 from rest_framework.test import APITestCase
+
+from datetime import datetime
+from django.shortcuts import reverse
 
 from apps.library.models import Award
 from apps.user.models import User

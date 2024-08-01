@@ -1,11 +1,9 @@
 from django.db import models
 
 import uuid
-
 from django.core.validators import MinValueValidator, MaxValueValidator
 from django.template.defaultfilters import slugify
 from ckeditor.fields import RichTextField
-
 from django.utils.translation import gettext_lazy as _
 
 from apps.common.models import BaseModel

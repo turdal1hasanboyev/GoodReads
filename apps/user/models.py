@@ -1,7 +1,6 @@
 from django.db import models
 
 from django.contrib.auth.models import UserManager, AbstractUser
-
 from rest_framework_simplejwt.tokens import RefreshToken
 
 from apps.common.models import BaseModel
@@ -52,6 +51,7 @@ class User(AbstractUser, BaseModel):
     def __str__(self) -> str:
         if self.get_full_name():
             return f"{self.id} - {self.get_full_name()}"
+        
         else:
             return f"{self.id} - {self.email}"
 

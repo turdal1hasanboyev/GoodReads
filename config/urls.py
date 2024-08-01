@@ -19,12 +19,11 @@ from django.urls import path, include
 
 from rest_framework_simplejwt.views import TokenRefreshView
 
-from apps.user.api.Login.views import EmailTokenObtainPairView
-
 from rest_framework import permissions
 from drf_yasg.views import get_schema_view
 from drf_yasg import openapi
 
+from apps.user.api.Login.views import EmailTokenObtainPairView
 
 schema_view = get_schema_view(
    openapi.Info(

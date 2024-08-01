@@ -1,14 +1,11 @@
 from django.db import models
 
 from django.urls import reverse
+from ckeditor.fields import RichTextField
+from django.template.defaultfilters import slugify
+from django.core.validators import MinValueValidator, MaxValueValidator
 
 from apps.common.models import BaseModel
-
-from ckeditor.fields import RichTextField
-
-from django.template.defaultfilters import slugify
-
-from django.core.validators import MinValueValidator, MaxValueValidator
 
 
 class Category(BaseModel):
