@@ -80,7 +80,7 @@ class MyBook(BaseModel):
     date_read = models.DateField(null=True, blank=True)
 
     def __str__(self) -> str:
-        return f"{self.user.get_full_name()} - {self.book}"
+        return f"{self.id} - {self.user.get_full_name()} - {self.book}"
     
 
 class FriendRequest(BaseModel):
