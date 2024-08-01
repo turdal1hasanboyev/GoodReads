@@ -15,6 +15,10 @@ class FriendRequestSerializer(ModelSerializer):
             "to_user"
         )
 
+        extra_kwargs = {
+            "id": {"read_only": True},
+        }
+
 
 class MyFriendsSerializer(ModelSerializer):
     to_users = SerializerMethodField()
@@ -36,6 +40,7 @@ class MyFriendsSerializer(ModelSerializer):
 
     def to_representation(self, instance):
         data = super().to_representation(instance)
+
         data["friends_count"] = data["to_users"].__len__()
 
         return data

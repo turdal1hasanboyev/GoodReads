@@ -96,5 +96,5 @@ class FriendRequest(BaseModel):
     )
 
     def __str__(self):
-        return f"{self.from_user} to {self.to_user}"
+        return f"{self.id} - {self.from_user} to {self.to_user}"
     

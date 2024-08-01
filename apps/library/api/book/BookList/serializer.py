@@ -8,8 +8,8 @@ from apps.library.api.genre.GenreLC.serializer import GenreLCSerializer
 
 class BookListSerializer(ModelSerializer):
     author = CustomUserSerializer(read_only=True)
-    award = AwardLCSerializer(read_only=True, many=True)
-    genres  = GenreLCSerializer(read_only=True, many=True)
+    award = AwardLCSerializer(many=True)
+    genres  = GenreLCSerializer(many=True)
 
     class Meta:
         model = Book
@@ -24,5 +24,6 @@ class BookListSerializer(ModelSerializer):
             "pages",
             "award",
             "cover",
+            "created_at",
         )
         

@@ -4,6 +4,7 @@ Django==4.2.14
 django-ckeditor==6.7.1
 django-filter==24.2
 django-js-asset==2.2.0
+django-query-counter==0.4.0
 djangorestframework==3.15.2
 djangorestframework-simplejwt==5.3.1
 drf-yasg==1.21.7
@@ -23,6 +24,7 @@ rpds-py==0.19.0
 setuptools==71.1.0
 sqlparse==0.5.1
 swagger-spec-validator==3.0.4
+tabulate==0.9.0
 typing_extensions==4.12.2
 tzdata==2024.1
 uritemplate==4.1.1

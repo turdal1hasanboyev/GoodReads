@@ -20,9 +20,12 @@ class BookUpdateSerializer(ModelSerializer):
             "pages",
             "award",
             "cover",
+            "created_at",
         )
         
         extra_kwargs = {
             "id": {"read_only": True},
+            "published_at": {"read_only": True},
+            "created_at": {"read_only": True},
         }
         

@@ -11,3 +11,8 @@ class FriendRequestDestroySerializer(ModelSerializer):
             "from_user",
             "to_user",
         )
+
+        extra_kwargs = {
+            "id": {"read_only": True},
+        }
+        

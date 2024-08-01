@@ -2,7 +2,6 @@ from rest_framework.generics import DestroyAPIView
 from rest_framework.serializers import ValidationError
 
 from apps.library.models import FriendRequest
-
 from apps.library.api.friendrequest.FriendRequestDestroy.serializer import FriendRequestDestroySerializer
 
 
@@ -11,11 +10,10 @@ class FriendRequestDestroyView(DestroyAPIView):
     queryset = FriendRequest.objects.all()
     lookup_field = "pk"
 
-    def perform_destroy(self, instance):
-        print(instance.from_user, self.request.user)
-        
+    def perform_destroy(self, instance):        
         if self.request.user.id == instance.from_user.id:
             instance.delete()
+
         else:
             raise ValidationError("You are not allowed to delete this friend request")
         
