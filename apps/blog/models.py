@@ -51,11 +51,8 @@ class Article(BaseModel):
 
         return super().save(*args, **kwargs)
     
-    def get_absolute_url(self):
-        return reverse("blog-detail", kwargs={"slug": self.slug})
-
     def __str__(self) -> str:
-        return self.name
+        return f"{self.id} - {self.name}"
 
 
 class Review(BaseModel):

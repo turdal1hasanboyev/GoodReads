@@ -7,6 +7,13 @@ class EmailVerifySerializer(serializers.ModelSerializer):
     class Meta:
         model = VerifyEmail
         fields = (
+            "id",
             "email",
             "code",
+            "created_at",
         )
+
+        extra_kwargs = {
+            "id": {"read_only": True},
+            "created_at": {"read_only": True},
+        }

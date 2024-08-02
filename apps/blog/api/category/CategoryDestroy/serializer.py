@@ -10,6 +10,6 @@ class CategoryDestroySerializer(ModelSerializer):
             'id',
             "name",
             "slug",
+            "created_at",
         )
-        
         

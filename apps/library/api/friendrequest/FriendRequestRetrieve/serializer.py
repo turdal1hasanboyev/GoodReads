@@ -13,10 +13,12 @@ class FriendRequestSerializer(ModelSerializer):
         fields = (
             "id",
             "to_user"
+            "created_at",
         )
 
         extra_kwargs = {
             "id": {"read_only": True},
+            "created_at": {"read_only": True},
         }
 
 
@@ -36,6 +38,7 @@ class MyFriendsSerializer(ModelSerializer):
             "first_name",
             "email",
             "to_users",
+            "created_at",
         )
 
     def to_representation(self, instance):

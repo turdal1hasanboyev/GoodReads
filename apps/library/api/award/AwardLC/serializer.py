@@ -10,9 +10,11 @@ class AwardLCSerializer(ModelSerializer):
             'id',
             "name",
             'date',
+            "created_at",
         )
 
         extra_kwargs = {
             "id": {"read_only": True},
+            "created_at": {"read_only": True},
         }
         

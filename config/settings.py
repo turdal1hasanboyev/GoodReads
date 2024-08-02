@@ -13,7 +13,6 @@ from pathlib import Path
 
 import os
 import environ
-
 from datetime import timedelta
 from django.conf import settings
 

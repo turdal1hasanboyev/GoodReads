@@ -7,9 +7,9 @@ from apps.blog.api.tag.TagLC.serializer import TagLCSerializer
 
 
 class ArticleListSerializer(ModelSerializer):
-    author = CustomUserSerializer(read_only=True)
-    category = CategoryListSerializer(read_only=True)
-    tags = TagLCSerializer(read_only=True, many=True)
+    author = CustomUserSerializer()
+    category = CategoryListSerializer()
+    tags = TagLCSerializer(many=True)
 
     class Meta:
         model = Article
@@ -22,5 +22,6 @@ class ArticleListSerializer(ModelSerializer):
             "category",
             "tags",
             "author",
+            "created_at",
         )
      

@@ -10,4 +10,5 @@ class CategoryListSerializer(ModelSerializer):
             'id',
             "name",
             "slug",
+            "created_at",
         )

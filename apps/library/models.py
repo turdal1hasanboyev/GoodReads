@@ -14,7 +14,7 @@ class Genre(BaseModel):
     parent = models.ForeignKey('self', on_delete=models.CASCADE, null=True, blank=True, related_name="children")
 
     def __str__(self) -> str:
-        return self.name
+        return f"{self.id} - {self.name}"
 
 
 class Award(BaseModel):
@@ -22,7 +22,7 @@ class Award(BaseModel):
     date = models.DateField(null=True, blank=True)
 
     def __str__(self) -> str:
-        return self.name
+        return f"{self.id} - {self.name}"
 
 
 class Book(BaseModel):
@@ -42,7 +42,7 @@ class Book(BaseModel):
     cover = models.ImageField(upload_to="Covers/", null=True, blank=True)
 
     def __str__(self) -> str:
-        return self.name
+        return f"{self.id} - {self.name}"
     
     def save(self, *args, **kwargs):  
         if not self.slug:
@@ -71,7 +71,7 @@ class Review(BaseModel):
     date_ended = models.DateField(null=True, blank=True)
 
     def __str__(self) -> str:
-        return f"{self.author.get_full_name()} - {self.book}"
+        return f"{self.id} - {self.author.get_full_name()} - {self.book}"
 
 
 class MyBook(BaseModel):

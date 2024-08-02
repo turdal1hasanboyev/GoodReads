@@ -10,5 +10,6 @@ class CategoryRetrieveSerializer(ModelSerializer):
             'id',
             "name",
             "slug",
+            "created_at",
         )
         

@@ -7,7 +7,7 @@ from apps.library.api.genre.GenreLC.serializer import GenreLCSerializer
 
 
 class BookListSerializer(ModelSerializer):
-    author = CustomUserSerializer(read_only=True)
+    author = CustomUserSerializer()
     award = AwardLCSerializer(many=True)
     genres  = GenreLCSerializer(many=True)
 

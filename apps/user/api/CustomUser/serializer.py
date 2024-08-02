@@ -12,5 +12,6 @@ class CustomUserSerializer(ModelSerializer):
             'last_name',
             'email',
             'phone_number',
+            "created_at",
         ]
         

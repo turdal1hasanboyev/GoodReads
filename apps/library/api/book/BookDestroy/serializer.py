@@ -17,9 +17,6 @@ class BookDestroySerializer(ModelSerializer):
             "pages",
             "award",
             "cover",
+            "created_at",
         )
-        
-        extra_kwargs = {
-            "id": {"read_only": True},
-        }
         
