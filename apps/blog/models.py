@@ -1,15 +1,16 @@
 from django.db import models
 
-from django.urls import reverse
 from ckeditor.fields import RichTextField
+
 from django.template.defaultfilters import slugify
+
 from django.core.validators import MinValueValidator, MaxValueValidator
 
 from apps.common.models import BaseModel
 
 
 class Category(BaseModel):
-    name = models.CharField(max_length=225)
+    name = models.CharField(max_length=225, null=True, blank=True)
     slug = models.SlugField(unique=True, null=True, blank=True, max_length=225)
 
     def save(self, *args, **kwargs):  
@@ -23,7 +24,7 @@ class Category(BaseModel):
     
 
 class Tag(BaseModel):
-    name = models.CharField(max_length=225)
+    name = models.CharField(max_length=225, null=True, blank=True)
     slug = models.SlugField(unique=True, null=True, blank=True, max_length=225)
 
     def save(self, *args, **kwargs):  
@@ -37,7 +38,7 @@ class Tag(BaseModel):
 
 
 class Article(BaseModel):
-    name = models.CharField(max_length=225)
+    name = models.CharField(max_length=225, null=True, blank=True)
     slug = models.SlugField(unique=True, null=True, blank=True, max_length=225)
     description = RichTextField(null=True, blank=True)
     image = models.ImageField(upload_to='Blogs/', null=True, blank=True)
@@ -62,8 +63,8 @@ class Review(BaseModel):
         null=True,
         related_name="article_reviews",
     )
-    article = models.ForeignKey(Article, on_delete=models.CASCADE, related_name="article_reviews")
-    rate = models.IntegerField(default=0, validators=[MinValueValidator(0), MaxValueValidator(5)])
+    article = models.ForeignKey(Article, on_delete=models.CASCADE, null=True, blank=True, related_name="article_reviews")
+    rate = models.IntegerField(default=0, validators=[MinValueValidator(0), MaxValueValidator(5)], null=True, blank=True)
     review = models.TextField(null=True, blank=True)
 
     def __str__(self) -> str:
