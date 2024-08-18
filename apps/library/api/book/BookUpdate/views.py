@@ -2,7 +2,7 @@ from rest_framework.generics import UpdateAPIView
 
 from apps.common.permissions import IsAuthor
 from apps.library.models import Book
-from apps.library.api.book.BookUpdate.serializer import BookUpdateSerializer
+from .serializer import BookUpdateSerializer
 
 
 class BookUpdateView(UpdateAPIView):

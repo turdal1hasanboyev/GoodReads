@@ -3,7 +3,7 @@ from rest_framework.response import Response
 from rest_framework import status
 
 from apps.library.models import FriendRequest
-from apps.library.api.friendrequest.FriendRequestCreate.serializer import FriendRequestCreateSerializer
+from .serializer import FriendRequestCreateSerializer
 
 
 class FriendRequestCreateView(CreateAPIView):

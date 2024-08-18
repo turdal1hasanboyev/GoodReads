@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from apps.blog.models import Category, Tag, Article, Review
+from .models import Category, Tag, Article, Review
 
 
 admin.site.register(Category)

@@ -1,7 +1,7 @@
 from rest_framework.generics import RetrieveAPIView
 
 from apps.blog.models import Category
-from apps.blog.api.category.CategoryDetail.serializer import CategoryRetrieveSerializer
+from .serializer import CategoryRetrieveSerializer
 
 
 class CategoryRetrieveView(RetrieveAPIView):

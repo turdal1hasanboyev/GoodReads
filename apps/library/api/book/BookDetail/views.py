@@ -1,7 +1,7 @@
 from rest_framework.generics import RetrieveAPIView
 
 from apps.library.models import Book
-from apps.library.api.book.BookDetail.serializer import BookRetrieveSerializer
+from .serializer import BookRetrieveSerializer
 
 
 class BookRetrieveView(RetrieveAPIView):

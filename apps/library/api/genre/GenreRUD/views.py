@@ -1,7 +1,7 @@
 from rest_framework.generics import RetrieveUpdateDestroyAPIView
 
 from apps.library.models import Genre
-from apps.library.api.genre.GenreRUD.serializer import GenreRUDSerializer
+from .serializer import GenreRUDSerializer
 
 
 class GenreRUDView(RetrieveUpdateDestroyAPIView):

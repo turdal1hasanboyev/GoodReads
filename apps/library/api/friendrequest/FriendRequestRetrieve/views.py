@@ -1,7 +1,7 @@
 from rest_framework.generics import RetrieveAPIView
 
 from apps.user.models import User
-from apps.library.api.friendrequest.FriendRequestRetrieve.serializer import MyFriendsSerializer
+from .serializer import MyFriendsSerializer
 
 
 class MyFriendsView(RetrieveAPIView):

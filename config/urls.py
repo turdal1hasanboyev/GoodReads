@@ -48,8 +48,6 @@ urlpatterns = [
 
     path('admin/', admin.site.urls),
 
-    path('ckeditor/', include('ckeditor_uploader.urls')),
-
     path('api/user/', include("apps.user.api_urls")),
     path('api/article/', include('apps.blog.api_urls')),
     path('api/library/', include('apps.library.api_urls')),
@@ -60,6 +58,8 @@ urlpatterns = [
     path('api/token/', EmailTokenObtainPairView.as_view(), name='token_obtain_pair'),
     path('api/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
 ]
+
+handler404 = "config.errors.page_not_found_view"
 
 if settings.DEBUG:
     urlpatterns += static(settings.STATIC_URL, document_root = settings.STATIC_ROOT)

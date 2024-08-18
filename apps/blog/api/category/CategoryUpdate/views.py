@@ -1,7 +1,7 @@
 from rest_framework.generics import UpdateAPIView
 
 from apps.blog.models import Category
-from apps.blog.api.category.CategoryUpdate.serializer import CategoryUpdateSerializer
+from .serializer import CategoryUpdateSerializer
 
 
 class CategoryUpdateView(UpdateAPIView):

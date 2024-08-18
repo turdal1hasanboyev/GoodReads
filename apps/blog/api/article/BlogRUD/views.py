@@ -1,7 +1,7 @@
 from rest_framework.generics import RetrieveUpdateDestroyAPIView
 
 from apps.blog.models import Article
-from apps.blog.api.article.BlogRUD.serializer import ArticleRUDSerializer
+from .serializer import ArticleRUDSerializer
 
 
 class ArticleRUDView(RetrieveUpdateDestroyAPIView):

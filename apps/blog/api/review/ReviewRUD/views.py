@@ -1,7 +1,7 @@
 from rest_framework.generics import RetrieveUpdateDestroyAPIView
 
 from apps.blog.models import Review
-from apps.blog.api.review.ReviewRUD.serializer import BlogReviewRUDSerializer
+from .serializer import BlogReviewRUDSerializer
 
 
 class ReviewRUDView(RetrieveUpdateDestroyAPIView):

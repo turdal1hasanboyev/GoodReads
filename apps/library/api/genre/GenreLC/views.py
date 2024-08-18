@@ -1,7 +1,7 @@
 from rest_framework.generics import ListCreateAPIView
 
 from apps.library.models import Genre
-from apps.library.api.genre.GenreLC.serializer import GenreLCSerializer
+from .serializer import GenreLCSerializer
 
 
 class GenreLCView(ListCreateAPIView):

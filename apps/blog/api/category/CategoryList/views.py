@@ -1,7 +1,7 @@
 from rest_framework.generics import ListAPIView
 
 from apps.blog.models import Category
-from apps.blog.api.category.CategoryList.serializer import CategoryListSerializer
+from .serializer import CategoryListSerializer
 
 
 class CategoryListView(ListAPIView):

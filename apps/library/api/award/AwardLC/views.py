@@ -1,7 +1,7 @@
 from rest_framework.generics import ListCreateAPIView
 
 from apps.library.models import Award
-from apps.library.api.award.AwardLC.serializer import AwardLCSerializer
+from .serializer import AwardLCSerializer
 
 
 class AwardLCView(ListCreateAPIView):

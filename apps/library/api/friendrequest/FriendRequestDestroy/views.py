@@ -2,7 +2,7 @@ from rest_framework.generics import DestroyAPIView
 from rest_framework.serializers import ValidationError
 
 from apps.library.models import FriendRequest
-from apps.library.api.friendrequest.FriendRequestDestroy.serializer import FriendRequestDestroySerializer
+from .serializer import FriendRequestDestroySerializer
 
 
 class FriendRequestDestroyView(DestroyAPIView):

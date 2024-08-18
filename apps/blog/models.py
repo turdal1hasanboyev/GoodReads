@@ -19,7 +19,7 @@ class Category(BaseModel):
 
         return super().save(*args, **kwargs)
     
-    def __str__(self) -> str:
+    def __str__(self):
         return f"{self.id} - {self.name}"
     
 
@@ -33,7 +33,7 @@ class Tag(BaseModel):
 
         return super().save(*args, **kwargs)
 
-    def __str__(self) -> str:
+    def __str__(self):
         return f"{self.id} - {self.name}"
 
 
@@ -52,7 +52,7 @@ class Article(BaseModel):
 
         return super().save(*args, **kwargs)
     
-    def __str__(self) -> str:
+    def __str__(self):
         return f"{self.id} - {self.name}"
 
 
@@ -67,6 +67,6 @@ class Review(BaseModel):
     rate = models.IntegerField(default=0, validators=[MinValueValidator(0), MaxValueValidator(5)], null=True, blank=True)
     review = models.TextField(null=True, blank=True)
 
-    def __str__(self) -> str:
+    def __str__(self):
         return f"{self.id} - {self.article}"
     

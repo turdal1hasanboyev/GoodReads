@@ -1,7 +1,7 @@
 from rest_framework.generics import DestroyAPIView
 
 from apps.library.models import Book
-from apps.library.api.book.BookDestroy.serializer import BookDestroySerializer
+from .serializer import BookDestroySerializer
 
 
 class BookDestroyView(DestroyAPIView):

@@ -1,8 +1,10 @@
 from django.db import models
 
 import uuid
+
 from django.core.validators import MinValueValidator, MaxValueValidator
 from django.template.defaultfilters import slugify
+
 from ckeditor.fields import RichTextField
 from django.utils.translation import gettext_lazy as _
 
@@ -13,7 +15,7 @@ class Genre(BaseModel):
     name = models.CharField(max_length=225, null=True, blank=True)
     parent = models.ForeignKey('self', on_delete=models.CASCADE, null=True, blank=True, related_name="children")
 
-    def __str__(self) -> str:
+    def __str__(self):
         return f"{self.id} - {self.name}"
 
 
@@ -21,7 +23,7 @@ class Award(BaseModel):
     name = models.CharField(max_length=225, null=True, blank=True)
     date = models.DateField(null=True, blank=True)
 
-    def __str__(self) -> str:
+    def __str__(self):
         return f"{self.id} - {self.name}"
 
 
@@ -42,7 +44,7 @@ class Book(BaseModel):
     award = models.ManyToManyField(Award, blank=True)
     cover = models.ImageField(upload_to="Covers/", null=True, blank=True)
 
-    def __str__(self) -> str:
+    def __str__(self):
         return f"{self.id} - {self.name}"
     
     def save(self, *args, **kwargs):  
@@ -71,7 +73,7 @@ class Review(BaseModel):
     date_started = models.DateField(null=True, blank=True)
     date_ended = models.DateField(null=True, blank=True)
 
-    def __str__(self) -> str:
+    def __str__(self):
         return f"{self.id} - {self.author.get_full_name()} - {self.book}"
 
 
@@ -80,7 +82,7 @@ class MyBook(BaseModel):
     book = models.ForeignKey(Book, on_delete=models.CASCADE, null=True, blank=True, related_name="favorites")
     date_read = models.DateField(null=True, blank=True)
 
-    def __str__(self) -> str:
+    def __str__(self):
         return f"{self.id} - {self.user.get_full_name()} - {self.book}"
     
 

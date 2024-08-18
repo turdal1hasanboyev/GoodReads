@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from apps.library.models import Genre, Award, Book, Review, MyBook, FriendRequest
+from .models import Genre, Award, Book, Review, MyBook, FriendRequest
 
 
 admin.site.register(Genre)

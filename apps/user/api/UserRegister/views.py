@@ -1,4 +1,5 @@
 import random
+
 from rest_framework import status
 from rest_framework.response import Response
 from rest_framework.generics import GenericAPIView
@@ -6,7 +7,7 @@ from rest_framework.permissions import AllowAny
 
 from apps.user.models import User, VerifyEmail
 from apps.user.utils import Util
-from apps.user.api.UserRegister.serializer import UserRegisterSerializer
+from .serializer import UserRegisterSerializer
 
 
 class UserRegisterCreateView(GenericAPIView):

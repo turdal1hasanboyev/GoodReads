@@ -1,7 +1,7 @@
 from rest_framework.generics import RetrieveUpdateDestroyAPIView
 
 from apps.blog.models import Tag
-from apps.blog.api.tag.TagRUD.serializer import TagRUDSerializer
+from .serializer import TagRUDSerializer
 
 
 class TagRUDView(RetrieveUpdateDestroyAPIView):

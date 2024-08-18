@@ -1,7 +1,7 @@
 from rest_framework.generics import DestroyAPIView
 
 from apps.blog.models import Category
-from apps.blog.api.category.CategoryDestroy.serializer import CategoryDestroySerializer
+from .serializer import CategoryDestroySerializer
 
 
 class CategoryDestroyView(DestroyAPIView):

@@ -3,7 +3,7 @@ from rest_framework.response import Response
 from rest_framework.generics import GenericAPIView
 
 from apps.user.models import VerifyEmail, User
-from apps.user.api.EmailVerify.serializer import EmailVerifySerializer
+from .serializer import EmailVerifySerializer
 
 
 class EmailVerifyGenericView(GenericAPIView):

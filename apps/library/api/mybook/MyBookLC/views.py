@@ -1,7 +1,7 @@
 from rest_framework.generics import ListCreateAPIView
 
 from apps.library.models import MyBook
-from apps.library.api.mybook.MyBookLC.serializer import MyBookLCSerializer
+from .serializer import MyBookLCSerializer
 from apps.common.permissions import IsAuthor
 
 

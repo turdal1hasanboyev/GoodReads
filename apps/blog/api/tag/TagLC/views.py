@@ -1,7 +1,7 @@
 from rest_framework.generics import ListCreateAPIView
 
 from apps.blog.models import Tag
-from apps.blog.api.tag.TagLC.serializer import TagLCSerializer
+from .serializer import TagLCSerializer
 
 
 class TagLCView(ListCreateAPIView):

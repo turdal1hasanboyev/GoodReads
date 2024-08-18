@@ -1,7 +1,7 @@
 from rest_framework.generics import ListCreateAPIView
 
 from apps.blog.models import Review
-from apps.blog.api.review.ReviewLC.serializer import BlogReviewLCSerializer
+from .serializer import BlogReviewLCSerializer
 
 
 class ReviewLCView(ListCreateAPIView):

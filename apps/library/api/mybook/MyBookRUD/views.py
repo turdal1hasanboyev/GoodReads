@@ -1,7 +1,7 @@
 from rest_framework.generics import RetrieveUpdateDestroyAPIView
 
 from apps.library.models import MyBook
-from apps.library.api.mybook.MyBookRUD.serializer import MyBookRUDSerializer
+from .serializer import MyBookRUDSerializer
 from apps.common.permissions import IsAuthor
 
 

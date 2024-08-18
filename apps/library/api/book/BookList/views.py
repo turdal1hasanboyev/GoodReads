@@ -2,8 +2,8 @@ from rest_framework.generics import ListAPIView
 from django_filters.rest_framework import DjangoFilterBackend
 
 from apps.library.models import Book
-from apps.library.api.book.BookList.serializer import BookListSerializer
-from apps.library.api.book.BookList.filter import BookFilter
+from .serializer import BookListSerializer
+from .filter import BookFilter
 
 class BookListView(ListAPIView):
     queryset = Book.objects.all()

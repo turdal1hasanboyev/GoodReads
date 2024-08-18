@@ -1,26 +1,26 @@
 from django.urls import path
 
-from apps.library.api.genre.GenreLC.views import GenreLCView
-from apps.library.api.genre.GenreRUD.views import GenreRUDView
+from .api.genre.GenreLC.views import GenreLCView
+from .api.genre.GenreRUD.views import GenreRUDView
 
-from apps.library.api.award.AwardLC.views import AwardLCView
-from apps.library.api.award.AwardRUD.views import AwardRUDView
+from .api.award.AwardLC.views import AwardLCView
+from .api.award.AwardRUD.views import AwardRUDView
 
-from apps.library.api.mybook.MyBookLC.views import MyBookLCView
-from apps.library.api.mybook.MyBookRUD.views import MyBookRUDView
+from .api.mybook.MyBookLC.views import MyBookLCView
+from .api.mybook.MyBookRUD.views import MyBookRUDView
 
-from apps.library.api.book.BookList.views import BookListView
-from apps.library.api.book.BookCreate.views import BookCreateView
-from apps.library.api.book.BookDestroy.views import BookDestroyView
-from apps.library.api.book.BookDetail.views import BookRetrieveView
-from apps.library.api.book.BookUpdate.views import BookUpdateView
+from .api.book.BookList.views import BookListView
+from .api.book.BookCreate.views import BookCreateView
+from .api.book.BookDestroy.views import BookDestroyView
+from .api.book.BookDetail.views import BookRetrieveView
+from .api.book.BookUpdate.views import BookUpdateView
 
-from apps.library.api.review.ReviewLC.views import ReviewLCView
-from apps.library.api.review.ReviewRUD.views import ReviewRUDView
+from .api.review.ReviewLC.views import ReviewLCView
+from .api.review.ReviewRUD.views import ReviewRUDView
 
-from apps.library.api.friendrequest.FriendRequestCreate.views import FriendRequestCreateView
-from apps.library.api.friendrequest.FriendRequestDestroy.views import FriendRequestDestroyView
-from apps.library.api.friendrequest.FriendRequestRetrieve.views import MyFriendsView
+from .api.friendrequest.FriendRequestCreate.views import FriendRequestCreateView
+from .api.friendrequest.FriendRequestDestroy.views import FriendRequestDestroyView
+from .api.friendrequest.FriendRequestRetrieve.views import MyFriendsView
 
 
 app_name = "library"

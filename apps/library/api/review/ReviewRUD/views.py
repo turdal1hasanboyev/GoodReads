@@ -1,7 +1,7 @@
 from rest_framework.generics import RetrieveUpdateDestroyAPIView
 
 from apps.library.models import Review
-from apps.library.api.review.ReviewRUD.serializer import ReviewRUDSerializer
+from .serializer import ReviewRUDSerializer
 
 
 class ReviewRUDView(RetrieveUpdateDestroyAPIView):

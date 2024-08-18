@@ -1,7 +1,7 @@
 from rest_framework.generics import ListAPIView
 
 from apps.blog.models import Article
-from apps.blog.api.article.BlogList.serializer import ArticleListSerializer
+from .serializer import ArticleListSerializer
 
 
 class ArticleListView(ListAPIView):

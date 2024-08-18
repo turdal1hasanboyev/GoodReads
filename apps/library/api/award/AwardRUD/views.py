@@ -1,7 +1,7 @@
 from rest_framework.generics import RetrieveUpdateDestroyAPIView
 
 from apps.library.models import Award
-from apps.library.api.award.AwardRUD.serializer import AwardRUDSerializer
+from .serializer import AwardRUDSerializer
 
 
 class AwardRUDView(RetrieveUpdateDestroyAPIView):
