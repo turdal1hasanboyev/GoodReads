@@ -50,6 +50,7 @@ INSTALLED_APPS = [
     'django_filters',
     'query_counter',
     'ckeditor',
+    "django_celery_results",
 
     'apps.user',
     'apps.blog',
@@ -72,6 +73,24 @@ MIDDLEWARE = [
 ROOT_URLCONF = 'config.urls'
 
 AUTH_USER_MODEL = 'user.User'
+
+CELERY_BROKER_URL = env.str("CELERY_BROKER_URL")
+CELERY_ACCEPT_CONTENT = ['application/json']
+CELERY_RESULT_BACKEND = 'django-db'
+CELERY_CACHE_BACKEND = 'django-cache'
+CELERY_TIMEZONE = 'Asia/Tashkent'
+CELERY_TASK_TRACK_STARTED = True
+CELERY_TASK_TIME_LIMIT = 30 * 60
+
+CACHES = {
+    "default": {
+        "BACKEND": "django_redis.cache.RedisCache",
+        "LOCATION": f"{env.str('REDIS_URL', 'redis://localhost:6379')}",
+        "OPTIONS": {
+            "CLIENT_CLASS": "django_redis.client.DefaultClient",
+        },
+    }
+}
 
 REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': (

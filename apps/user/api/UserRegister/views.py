@@ -6,8 +6,8 @@ from rest_framework.generics import GenericAPIView
 from rest_framework.permissions import AllowAny
 
 from apps.user.models import User, VerifyEmail
-from apps.user.utils import Util
 from .serializer import UserRegisterSerializer
+from apps.user.tasks import send_email
 
 
 class UserRegisterCreateView(GenericAPIView):
@@ -30,12 +30,12 @@ class UserRegisterCreateView(GenericAPIView):
                 code = str(random.randint(100_000, 999_999))
 
                 data = {
-                    "to_email": email,
-                    "email_subject": "<h1>Check your verifiy code</h1>",
-                    "email_body": f"<h2>This is your {code} verifiy code!</h2>"
+                    "subject": "Verify Email",
+                    "message": f"Your code is {code}",
+                    "to_email": email
                 }
 
-                Util.send_email(data=data)
+                send_email.delay(**data)
 
                 VerifyEmail.objects.create(email=email, code=code)
 
