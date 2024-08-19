@@ -55,11 +55,13 @@ class Book(BaseModel):
     
 
 class Review(BaseModel):
+
     STATUS = (
         (0, _("read")),
         (1, _("currently-reading")),
         (2, _("to-read"))
     )
+    
     author = models.ForeignKey(
         "user.User",
         on_delete=models.SET_NULL,
